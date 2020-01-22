@@ -15,7 +15,8 @@ RUN apt-get update \
         libcurl3 \
         libicu55 \
         libunwind8 \
-        netcat
+        netcat \
+        apt-transport-https
 
 RUN curl -O https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
 
