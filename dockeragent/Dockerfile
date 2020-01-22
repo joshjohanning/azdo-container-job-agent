@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0
+FROM ubuntu:16.04
 
 # To make it easier for build and release pipelines to run apt-get,
 # configure apt to not require confirmation (assume the -y argument by default)
@@ -12,9 +12,17 @@ RUN apt-get update \
         jq \
         git \
         iputils-ping \
-        libcurl4 \
+        libcurl3 \
+        libicu55 \
         libunwind8 \
-        netcat
+        netcat \
+        apt-transport-https
+
+RUN curl -O https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb
+
+RUN apt-get update \
+&& apt-get install -y --no-install-recommends \
+        dotnet-sdk-3.0
 
 WORKDIR /azp
 
