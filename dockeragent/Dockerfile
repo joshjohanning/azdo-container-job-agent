@@ -13,7 +13,6 @@ RUN apt-get update \
         git \
         iputils-ping \
         libcurl4 \
-        libicu55 \
         libunwind8 \
         netcat
 
