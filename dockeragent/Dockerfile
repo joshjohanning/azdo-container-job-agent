@@ -15,7 +15,8 @@ RUN apt-get update \
         libcurl3 \
         libicu55 \
         libunwind8 \
-        netcat
+        netcat \
+        dotnet-sdk-3.0
 
 WORKDIR /azp
 
