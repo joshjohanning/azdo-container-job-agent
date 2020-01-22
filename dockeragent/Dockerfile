@@ -17,7 +17,7 @@ RUN apt-get update \
         libunwind8 \
         netcat
 
-RUN curl https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
+RUN curl https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
 
 RUN apt-get update \
 && apt-get install -y --no-install-recommends \
