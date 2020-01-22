@@ -21,7 +21,6 @@ RUN curl -O https://packages.microsoft.com/config/ubuntu/16.04/packages-microsof
 
 RUN apt-get update \
 && apt-get install -y --no-install-recommends \
-        apt-transport-https \
         dotnet-sdk-3.0
 
 WORKDIR /azp
