@@ -4,6 +4,7 @@ FROM ubuntu:16.04
 # configure apt to not require confirmation (assume the -y argument by default)
 ENV DEBIAN_FRONTEND=noninteractive
 RUN echo "APT::Get::Assume-Yes \"true\";" > /etc/apt/apt.conf.d/90assumeyes
+RUN wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
 
 RUN apt-get update \
 && apt-get install -y --no-install-recommends \
@@ -16,6 +17,7 @@ RUN apt-get update \
         libicu55 \
         libunwind8 \
         netcat \
+        apt-transport-https \
         dotnet-sdk-3.0
 
 WORKDIR /azp
