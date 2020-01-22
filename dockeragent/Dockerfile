@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0
 
 # To make it easier for build and release pipelines to run apt-get,
 # configure apt to not require confirmation (assume the -y argument by default)
@@ -16,8 +16,6 @@ RUN apt-get update \
         libicu55 \
         libunwind8 \
         netcat
-
-RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb
 
 WORKDIR /azp
 
